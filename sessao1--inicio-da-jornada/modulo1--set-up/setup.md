@@ -1,11 +1,13 @@
-# Início da Jornada
+# Início da Jornada a
 
-### Configurando ambiente de desenvolvimento
+## Configurando ambiente de desenvolvimento
 
 Imagino que sua máquina seja Windows 10, e não um sistema Unix como a minha, então irei te ensinar a configurar o seu
 ambiente de desenvolvimento para ficar o mais parecido possível com o meu.
 
 ## Instalando e configurando WSL & Ubuntu
+
+### WSL - Windows Subsystem Linux
 
 Abra o PowerShell (como **administrador**) e digite o seguinte comando para habilitar o WSL:
 
@@ -26,6 +28,8 @@ wsl --set-default-version 2
 ```
 
 Pronto, seu WSL está configurado! Agora vamos configurar o Ubuntu.
+
+### Ubuntu
 
 Abra sua Microsoft Store e escolha sua distro Linux a ser instalada. Podendo ser Ubuntu, Debian (a que eu uso), Kali Linux
 ou OpenSuse, mas eu recomendo instalar o Ubuntu. Instale sempre a versão com o maior número e contendo LTS no nome.
@@ -49,6 +53,8 @@ julya@DESKTOP-8013ENL:~$
 
 Recomendo fortemente escolher uma senha com oito ou mais digitos.
 
+Pronto! Configuramos o WSL e o Ubuntu na sua máquina.
+
 ## Instalando e configurando o Windows Terminal
 
 O Windows Terminal é o aplicativo de Terminal feito pela Microsoft, inclusive é o melhor para trabalhar com o WSL.
@@ -59,9 +65,48 @@ Abra as configurações apertando `shift + ,` (vírgula) e selecione o **Default
 PowerShell para Ubuntu 22.04 ou algo parecido. Feche o Windows Terminal e abra-o novamente. Ele deverá iniciar no 
 Ubuntu.
 
-## Instalando e configurando NodeJS e PNPM
+## Instalando e configurando Node.js e PNPM
 
+Chegou a hora de instalar os dois protagonistas desse curso todo, os que todos os devs amam (e odeiam ao mesmo tempo), o Node.js, que vai fazer o JavaScript ser executado no Back-End e o PNPM, que vai salvar vidas e poupar tempo.
 
+### Node.js
+
+Com o Ubuntu aberto no seu Windows Terminal, siga os seguintes passos:
+
+```
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+Digite `node -v` no seu terminal, você deverá ver algo parecido com isso:
+
+```
+julya@DESKTOP-8013ENL:~$ node -v
+v18.5.0
+
+julya@DESKTOP-8013ENL:~$
+```
+
+### PNPM
+
+O Node.js vem com o NPM (Node Package Manager) instalado por padrão, mas o NPM é muito lento em algumas coisas, como, instalar as dependências de nossos projetos, por isso, usaremos o PNPM (Performatic Node Package Manager), ele é mais rápido e mais leve que o NPM comum.
+
+Com o Ubuntu aberto no seu Windows Termina, siga os seguintes passos:
+
+```
+sudo install --global pnpm
+```
+
+Digite `pnpm -v` no seu terminal, você deverá ver algo parecido com isso:
+
+```
+julya@DESKTOP-8013ENL:~$ pnpm -v
+7.29.1
+
+julya@DESKTOP-8013ENL:~$ 
+```
+
+Pronto! Instalamos o Node.js e o PNPM
 
 ## Instalando e configurando Sublime Text
 
@@ -77,17 +122,17 @@ sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearm
 
 Selecione o canal para instalação:
 
-Stable (recomendado):
+* Stable (recomendado):
 
-```
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-```
+	```
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	```
 
-Dev:
+* Dev:
 
-```
-echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-```
+	```
+	echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	```
 
 Atualize os pacotes apt e instale o sublime text:
 
