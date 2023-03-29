@@ -1,4 +1,4 @@
-# Início da Jornada a
+# Início da Jornada
 
 ## Configurando ambiente de desenvolvimento
 
@@ -65,87 +65,12 @@ Abra as configurações apertando `shift + ,` (vírgula) e selecione o **Default
 PowerShell para Ubuntu 22.04 ou algo parecido. Feche o Windows Terminal e abra-o novamente. Ele deverá iniciar no 
 Ubuntu.
 
-## Instalando e configurando Node.js e PNPM
+Pronto! Instalamos o Windows Terminal e o configuramos da maneira correta!
 
-Chegou a hora de instalar os dois protagonistas desse curso todo, os que todos os devs amam (e odeiam ao mesmo tempo), o Node.js, que vai fazer o JavaScript ser executado no Back-End e o PNPM, que vai salvar vidas e poupar tempo.
+## Mão na massa!
 
-### Node.js
-
-Com o Ubuntu aberto no seu Windows Terminal, siga os seguintes passos:
-
-```
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
-
-Digite `node -v` no seu terminal, você deverá ver algo parecido com isso:
-
-```
-julya@DESKTOP-8013ENL:~$ node -v
-v18.5.0
-
-julya@DESKTOP-8013ENL:~$
-```
-
-### PNPM
-
-O Node.js vem com o NPM (Node Package Manager) instalado por padrão, mas o NPM é muito lento em algumas coisas, como, instalar as dependências de nossos projetos, por isso, usaremos o PNPM (Performatic Node Package Manager), ele é mais rápido e mais leve que o NPM comum.
-
-Com o Ubuntu aberto no seu Windows Termina, siga os seguintes passos:
-
-```
-sudo install --global pnpm
-```
-
-Digite `pnpm -v` no seu terminal, você deverá ver algo parecido com isso:
-
-```
-julya@DESKTOP-8013ENL:~$ pnpm -v
-7.29.1
-
-julya@DESKTOP-8013ENL:~$ 
-```
-
-Pronto! Instalamos o Node.js e o PNPM
-
-## Instalando e configurando Sublime Text
-
-Sublime text é um editor de código/texto, um dos mais leves e melhor para se começar a programar.
-
-Com o Ubuntu aberto no seu Windows Terminal, siga os seguintes passos:
-
-Para instalar a chave GPG:
-
-```
-sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
-```
-
-Selecione o canal para instalação:
-
-* Stable (recomendado):
-
-	```
-	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-	```
-
-* Dev:
-
-	```
-	echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-	```
-
-Atualize os pacotes apt e instale o sublime text:
-
-```
-sudo apt-get update
-sudo apt-get install sublime-text
-```
-
-Caso isso falhe, tenha certeza que o APT está configurado com o serviço http:
-
-```
-sudo apt-get install apt-transport-https
-```
+A partir de agora você já tem tudo que precisa para colocar a mão na massa e iniciar os estudos. 
+Happy hacking!
 
 ## Links úteis:
 
@@ -164,4 +89,3 @@ https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701
 ### Tutorial mais detalhado:
 
 https://www.youtube.com/watch?v=hd6lxt5iVsg
-
